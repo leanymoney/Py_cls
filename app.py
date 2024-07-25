@@ -11,8 +11,8 @@ def url_sec(address):
 
     cursor = db.cursor()
 
-    #cursor.execute('create table godb(address text, url text)')
-    #cursor.execute('insert into godb(address,url) values("amazon", "https://www.amazon.com"),("myntra", "https://www.myntra.com")')
+    cursor.execute('create table if not exists godb(address text, url text)')
+    cursor.execute('insert into godb(address,url) values("amazon", "https://www.amazon.com"),("myntra", "https://www.myntra.com"),("flipkart", "https://www.flipkart.com"),("github", "https://www.github.com"),("movies", "https://web.netmovies.to/home/"),("localmovies", "https://www.5movierulz.ink/"),("info", "https://www.wikipedia.com/")')
 
     cursor.execute('select url from godb where address=?', (address,))
 
